@@ -1,0 +1,26 @@
+#============================================================
+# CUSTOM FUNCTIONS FILE - FE FUNCTION
+# OWNERSHIP: USER
+# PABLO AGUIRRE NÚÑEZ
+#============================================================
+
+#------------------------------------------------------------
+# BEGINNING OF CUSTOM FUNCTIONS FILE - FE FUNCTION
+#------------------------------------------------------------
+#
+#------------------------------------------------------------
+# fe function displays fzf search.
+# When enter, vim opens selected file.
+#------------------------------------------------------------
+
+#local files
+#IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+IFS=$'\n' files=($(fzf-tmux --height 80% --layout=reverse --border --color 16 --preview='bat {}' --header='Open file' --query="$1" --multi --select-1 --exit-0))
+[[ -n "$files" ]] && zsh -c '</dev/tty $EDITOR "$@"' dummy "${files[@]}"
+
+# Set vim filetype
+# vim: set ft=sh:
+
+#------------------------------------------------------------
+# END OF CUSTOM FUNCTIONS FILE - FE FUNCTION
+#------------------------------------------------------------

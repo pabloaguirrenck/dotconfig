@@ -1,0 +1,10 @@
+[Keyboard]
+KeyRepeat=repeat
+NumLock=0
+RepeatDelay=179
+RepeatRate=100
+
+[Mouse]
+XLbInptMiddleEmulation=true
+cursorSize=36
+cursorTheme=DeppinDark-cursors

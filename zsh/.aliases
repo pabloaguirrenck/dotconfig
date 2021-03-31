@@ -1,0 +1,150 @@
+#============================================================
+# ZSHRC ALIASES UCONFIGURATION FILE
+# OWNERSHIP: USER
+# PABLO AGUIRRE NÚÑEZ
+#============================================================
+
+#------------------------------------------------------------
+# BEGINNING OF ZSHRC ALIASES CONFIGURATION FILE
+#------------------------------------------------------------
+#------------------------------------------------------------
+# General Operations
+#------------------------------------------------------------
+alias cl="clear"
+
+alias hi="history"
+
+alias rh="echo > ~/.cache/zsh/.zsh_history"
+
+#------------------------------------------------------------
+# LSD
+#------------------------------------------------------------
+alias l="lsd -1 -A --group-dirs first"
+
+#alias ls="lsd --group-dirs first"
+
+alias la="lsd -A --group-dirs first"
+
+alias ll="lsd -l"
+
+alias lo="lsd -l -A --group-dirs first"
+
+alias lr="lsd -R -A --group-dirs first"
+
+alias lt="lsd --tree"
+#------------------------------------------------------------
+# Edit files
+#------------------------------------------------------------
+# Edit/create files on neovim
+alias v=$EDITOR
+
+#------------------------------------------------------------
+# Open programs (custom)
+#------------------------------------------------------------
+# Opens fuzzy finder on current directory
+alias fz="fzf"
+
+alias ra="ranger"
+#------------------------------------------------------------
+# Open programs (custom)
+#------------------------------------------------------------
+alias palette="~/bin/utils_scripts/utils_pastel"
+alias colors256="~/bin/utils_scripts/utils_colors256"
+alias pc="pastel color"
+
+#------------------------------------------------------------
+# Download from youtube
+#------------------------------------------------------------
+alias dbs="bandcamp-dl -o -g"
+alias ydd="youtube-dl"
+alias yda="youtube-dl -x --audio-format flac --audio-quality 0"
+alias ydv="youtube-dl -f bestvideo --recode-video mkv"
+
+#------------------------------------------------------------
+# Copy stdout to clipboard
+#------------------------------------------------------------
+# Copy output to clipboard
+alias cpo="xclip -selection clipboard"
+
+# Copy directory to clipboard
+alias cpd="pwd | xclip -selection clipboard"
+
+#------------------------------------------------------------
+# Open important config files
+#------------------------------------------------------------
+# Opens .zshrc config on vim
+alias zz="$EDITOR ~/.config/zsh/.zshrc" 
+
+# Opens bspwm config on vim
+alias zb="$EDITOR ~/.config/bspwm/bspwmrc"
+
+# Opens sxhkd config on vim
+alias zs="$EDITOR ~/.config/sxhkd/sxhkdrc"
+
+# Opens i3 config on vim
+alias zi="$EDITOR ~/.config/i3/config" 
+
+# Opens vim config on vim
+alias zv="$EDITOR ~/.config/nvim/init.vim" 
+
+# Opens tmux config on vim
+alias zm="$EDITOR ~/.tmux.conf" 
+
+# Opens termite config on vim
+alias zt="$EDITOR ~/.config/termite/config" 
+
+# Opens lf config on vim
+alias zl="$EDITOR ~/.config/lf/lfrc" 
+
+# Opens powerlevel10k config on vim
+alias zp="$EDITOR ~/.config/zsh/.p10k.zsh" 
+
+# Opens neomuttrc config on vim
+alias zn="$EDITOR ~/.config/neomutt/neomuttrc" 
+
+#------------------------------------------------------------
+# cd into directories
+#------------------------------------------------------------
+# cd's into 60GB USB drive directory
+alias g6="cd $STORAGEDIR/60GB"
+
+# cd's into SG8TI USB drive directory
+alias gsg="cd $STORAGEDIR/SG8TI"
+
+# cd's into WD8TI USB drive directory
+alias gwd="cd $STORAGEDIR/WD8TI"
+
+# cd's into 2TB HDD drive directory
+alias g2="cd /$STORAGEDIR/2TB"
+
+# cd's into 750GB HDD drive directory
+alias g7="cd /$STORAGEDIR/750GB"
+
+# cd to .config dir
+alias cf="cd .config"
+
+#------------------------------------------------------------
+# cd into projects
+#------------------------------------------------------------
+#alias gw="cd $STORAGEDIR/60GB/Personal/Projects/Website"
+
+
+
+#------------------------------------------------------------
+# Git configuration aliases
+#------------------------------------------------------------
+# Automatically configures local repository with username & token, according to env variables stated on ~/.zshenv
+alias ap="git config credential.helper '!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_TOKEN}"; }; f'"
+
+# Deletes git repo cache, and adds all listed files. (Will add new exceptions and rules on .gitignore)
+alias gre="git rm -r -f --ignore-unmatch --cached . ; git add ."
+
+# Adds all untracked files, and commits with comment as current date and time
+alias gacp="git add . ; git commit -am 'Updated: `date +'%Y-%m-%d %H:%M:%S'`' ; git push -u origin master"
+
+# Display log in prettier version
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+#------------------------------------------------------------
+# END OF ZSHRC ALIASES CONFIGURATION FILE
+#------------------------------------------------------------

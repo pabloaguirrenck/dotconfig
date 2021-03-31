@@ -1,0 +1,34 @@
+#============================================================
+# .GITIGNORE FILE FOR ~ DIRECTORY, -GARUDA-DOTCONFIG REPO
+# OWNERSHIP: USER
+# PABLO AGUIRRE NÚÑEZ
+#============================================================
+
+#------------------------------------------------------------
+# BEGINNING OF .GITIGNORE FILE
+#------------------------------------------------------------
+
+#Ignore all except
+/*
+/*/
+!nvim/
+!kitty/
+!latte/
+!lf/
+!pulse/
+!ranger/
+!solaar/
+!transmission/
+!youtube-dl/
+!zsh/
+!kcminputrc
+!mimeapps.list
+!plasmarc
+
+
+# Ignore everything except .gitignore
+!.gitignore
+
+#------------------------------------------------------------
+# END OF .GITIGNORE FILE
+#------------------------------------------------------------
