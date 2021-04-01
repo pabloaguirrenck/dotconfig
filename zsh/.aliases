@@ -58,7 +58,9 @@ alias pc="pastel color"
 alias dbs="bandcamp-dl -o -g"
 alias ydd="youtube-dl"
 alias yda="youtube-dl -x --audio-format flac --audio-quality 0"
+alias ydab="youtube-dl -ix --audio-format flac --audio-quality 0 -a"
 alias ydv="youtube-dl -f bestvideo --recode-video mkv"
+alias ydvb="youtube-dl -if bestvideo --recode-video mkv -a"
 
 #------------------------------------------------------------
 # Copy stdout to clipboard

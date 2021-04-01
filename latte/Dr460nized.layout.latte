@@ -27,7 +27,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][12][Applets][40][Configuration]
-PreloadWeight=84
+PreloadWeight=100
 
 [Containments][12][Applets][40][Configuration][ConfigDialog]
 DialogHeight=540
@@ -46,7 +46,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][12][Applets][42][Configuration]
-PreloadWeight=97
+PreloadWeight=100
 SystrayContainmentId=13
 
 [Containments][12][Applets][77]
@@ -210,6 +210,10 @@ plugin=org.kde.plasma.volume
 [Containments][13][Applets][46][Configuration]
 PreloadWeight=0
 
+[Containments][13][Applets][46][Configuration][General]
+globalMute=true
+globalMuteDevices=alsa_output.pci-0000_00_03.0.hdmi-stereo-extra1.0
+
 [Containments][13][Applets][49]
 immutability=1
 plugin=org.kde.plasma.notifications
@@ -226,7 +230,7 @@ immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
 [Containments][13][Applets][50][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][13][Applets][50][Configuration][ConfigDialog]
 DialogHeight=780
@@ -278,18 +282,25 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][13][Applets][89][Configuration]
-PreloadWeight=5
+PreloadWeight=15
 
 [Containments][13][Applets][92]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][13][Applets][92][Configuration]
-PreloadWeight=88
+PreloadWeight=100
 
 [Containments][13][Applets][92][Configuration][ConfigDialog]
 DialogHeight=660
 DialogWidth=880
+
+[Containments][13][Applets][93]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
+[Containments][13][Applets][93][Configuration]
+PreloadWeight=0
 
 [Containments][13][ConfigDialog]
 DialogHeight=1080
