@@ -81,6 +81,9 @@ map tmsb addsubmdt
 # Add english subs mkv and srt files
 map tads addengsubs
 
+# Offset subs by seconds, determined by number on begining of line
+map toffs offsetsubs
+
 cmd mergewebm ${{
   set -fx
   vid=$(echo "$fx" | grep ".webm")
@@ -128,6 +131,12 @@ cmd addengsubs ${{
   vid=$(echo "$fx" | grep ".mkv")
   sub=$(echo "$fx" | grep ".srt")
   mkvmerge -o "$vid"+"d" "$vid" --language 0:eng --track-name 0:English "$sub" 
+}}
+
+cmd offsetsubs ${{
+  set -fx
+  newsub=$(echo "d"+"$fx")
+  ffmpeg -itsoffset 2 -i "$fx" -c copy $fx.srt
 }}
 
 #------------------------------------------------------------
