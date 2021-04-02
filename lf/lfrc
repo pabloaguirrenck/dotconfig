@@ -76,7 +76,10 @@ map tavi mergeavi
 map tconv convmp4
 
 # Transcode Add Sub Metadata
-map tads addsubmdt
+map tmsb addsubmdt
+
+# Add english subs mkv and srt files
+map tads addengsubs
 
 cmd mergewebm ${{
   set -fx
@@ -120,6 +123,13 @@ cmd addsubmdt ${{
   ffmpeg -i "$mkvid" -metadata:s:s:0 language=eng -c copy "output_merged.mkv"
 }}
 
+cmd addengsubs ${{
+  set -fx
+  vid=$(echo "$fx" | grep ".mkv")
+  sub=$(echo "$fx" | grep ".srt")
+  mkvmerge -o "$vid"+"d" "$vid" --language 0:eng --track-name 0:English "$sub" 
+}}
+
 #------------------------------------------------------------
 # Audio manipulation keybindings
 #------------------------------------------------------------
@@ -130,7 +140,7 @@ cmd mergemkvflac ${{
   set -fx
   vid=$(echo "$fx" | grep ".mkv")
   aud=$(echo "$fx" | grep ".flac")
-  ffmpeg -i "$vid" -i "$aud" -c:v copy -c:a copy output.mkv
+  ffmpeg -i "$vid" -i "$aud" -c:v copy -c:a copy "$vid"+"d"
 }}
 
 
