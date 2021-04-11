@@ -136,7 +136,7 @@ cmd addengsubs ${{
 cmd offsetsubs ${{
   set -fx
   newsub=$(echo "d"+"$fx")
-  ffmpeg -itsoffset 2 -i "$fx" -c copy $fx.srt
+  ffmpeg -itsoffset 1 -i "$fx" -c copy $fx.srt
 }}
 
 #------------------------------------------------------------
@@ -149,7 +149,9 @@ cmd mergemkvflac ${{
   set -fx
   vid=$(echo "$fx" | grep ".mkv")
   aud=$(echo "$fx" | grep ".flac")
-  ffmpeg -i "$vid" -i "$aud" -c:v copy -c:a copy "$vid"+"d"
+  #ffmpeg -i "$vid" -i "$aud" -c:v copy -c:a copy $fx.mkv
+  #mkvmerge -o output-with-sound.m -A input-video.mkv soundfile.mp3
+  mkvmerge -o "$vid"+"d" -A "$vid" "$aud"
 }}
 
 

@@ -29,3 +29,4 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 application/zip=transmission-gtk.desktop;
+application/octet-stream=transmission-gtk.desktop;
